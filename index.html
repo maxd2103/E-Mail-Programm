@@ -1,5 +1,23 @@
+<!DOCTYPE html> <!--//https://www.youtube.com/watch?v=kWEDY0rjS30-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Mail Test</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Grusskartenanwendung</h1>
+    <form class="contact_form" action="#">
+        <input class="name" type="text" placeholder="Name" />
+        <input class="email" type="email" placeholder="E-Mail" />
+        <textarea class="msg" cols="5" rows="5" placeholder="E-Mail"></textarea>
+        <button type="submit">Senden</button> 
+    </form>
 
-<!DOCTYPE html>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 
 <html lang="de">
     <head>
@@ -14,9 +32,35 @@
       <input type="text" id="fromNAme" placeholder="Dein Name">
       <input type="text" id="msg" placeholder="Nachricht">
       <button>Senden</button>    
+    <script>
+       const  form = document.querySelector('.contact_form');
+    //function to send the message when click on button send
+    function sendMsg(e){
+        e.preventDefault();
+     
+            const name = document.querySelector('.animateTransform'),
+                email = document.querySelector('.email'),
+                msg = document.querySelector('.msg');
 
+    //8BA998CE5243F82CB8770DCC2F757E5602EB   smtp.elasticemail.com   Port: 2525
+    //E-Mail Senden Funktion:
+
+        Email.send({
+       
+        SecureToken : "d79a094d-0b62-483d-842c-fcdbc94e4e12",
+        To : email.value,
+        From : "matthiasruhsert@gmail.com",
+        Subject : "Test",
+        Body : msg.value
+    }).then(
+    message => alert(message)
+    );
+        }
         
+    //add the event listener submit
+    form.addEventListener('submit', sendMsg);
 
-    </body>
 
+    </script>
+</body>
 </html>
