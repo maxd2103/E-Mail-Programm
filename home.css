@@ -1,0 +1,62 @@
+a:link { 
+    text-decoration: none; 
+}
+a:visited { 
+    text-decoration: none; 
+}
+a:hover { 
+    text-decoration: none; 
+}
+a:active { 
+    text-decoration: none; 
+}
+
+.logo-home{
+    margin-top: 15px;
+    margin-left: 669px;
+    width: 582px;
+    height: 225px;
+    background: transparent url('img/DHBW-Logo.png') 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+.btn-left{
+    display: inline-block;
+    margin-top: 154px;
+    margin-left: 190px;
+    width: 554px;
+    height: 339px;
+    background: #C3260C 0% 0% no-repeat padding-box;
+    opacity: 1; 
+}
+.btn-text{
+    padding-top: 60px;
+    padding-left: 80px;
+    text-align: left;
+    width: 400px;
+    height: 79px;
+    font: normal normal normal 59px/79px Segoe UI;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+.btn-right-text{
+    padding-top: 60px;
+    padding-left: 80px;
+    text-align: left;
+    width: 405px;
+    height: 79px;
+    font: normal normal normal 59px/79px Segoe UI;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+.btn-right{
+    display: inline-block;
+    margin-top: 154px;
+    margin-left: 432px;
+    width: 554px;
+    height: 339px;
+    background: #C3260C 0% 0% no-repeat padding-box;
+    opacity: 1; 
+}
