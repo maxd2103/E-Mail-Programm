@@ -12,9 +12,9 @@ function sendMsg(e){
 
     Email.send({
    
-    SecureToken : "d79a094d-0b62-483d-842c-fcdbc94e4e12",
+    SecureToken : "7e5179d7-9022-4250-b0ed-8fa46a72f667",
     To : email.value,
-    From : "matthiasruhsert@gmail.com",
+    From : "grusskartenanwendung@gmail.com",
     Subject : "Test",
     Body : msg.value
 }).then(
