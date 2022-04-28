@@ -1,4 +1,3 @@
-
 body {
 	margin: 0;
 }
@@ -60,10 +59,11 @@ form{
     height: 600px;                                          /*Fenster Höhe */
     display: grid;                                          /*Ist jetzt eine Matrix*/ 
     grid-template-columns: 150px 25% 25% 25%;                 /*Wie viele Spalten  / Wie breit*/
-    grid-template-rows: 10% 10% 10% 10%;                    /*Wie viele Reihen  /  Wie hoch*/
+    grid-template-rows: 10% 10% 10% 10% 10%;                    /*Wie viele Reihen  /  Wie hoch*/
     grid-template-areas:                                    /*Einefachere Variante*/
         "text1 name name name"
         "text2 email email send"
+        "text4 btr btr send"
         "text3 msg msg msg"
 }
 .text-1{
@@ -74,6 +74,9 @@ form{
 }
 .text-3{
     grid-area: text3;
+}
+.text-4{
+    grid-area: text4;
 }
 .box-1{
     grid-area: name;
@@ -86,6 +89,9 @@ form{
 }
 .box-4{
     grid-area: send;
+}
+.box-5{
+    grid-area: btr;
 }
 
 form input, form textarea, form button{
@@ -103,7 +109,7 @@ form input{
 }
 form textarea{
     width: 450px;
-    height: 500px;
+    height: 450px;
 }
 
 form button{
