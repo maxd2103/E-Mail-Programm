@@ -92,7 +92,7 @@ form{
     grid-area: send;
 }
 .box-5{
-    grid-area: send;
+    grid-area: btr;
 }
 
 form input, form textarea, form button{
