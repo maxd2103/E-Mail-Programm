@@ -4,6 +4,7 @@ const  form = document.querySelector('.contact_form');
 function sendMsg(email){
 
   const name = document.querySelector('.animateTransform'),
+    btr = document.querySelector ('.btr'),
     msg = document.querySelector('.msg');
 
   //8BA998CE5243F82CB8770DCC2F757E5602EB   smtp.elasticemail.com   Port: 2525
@@ -13,7 +14,7 @@ function sendMsg(email){
     SecureToken : "d79a094d-0b62-483d-842c-fcdbc94e4e12",
     To : email,
     From : "grusskartenanwendung@gmail.com",
-    Subject : "Test",
+    Subject : btr.value,
     Body : msg.value
   })
 }
