@@ -16,7 +16,9 @@ function sendMsg(email){
     From : "grusskartenanwendung@gmail.com",
     Subject : btr.value,
     Body : msg.value
-  })
+  }).then(
+    message => alert(message)
+    );
 }
 
 
@@ -24,7 +26,6 @@ function sendMultiMail(e) {
   e.preventDefault();
   let email = document.querySelector('.email').value.split(",");
   email.forEach(sendMsg);
-  alert(message);
 }
 
 //add the event listener submit
