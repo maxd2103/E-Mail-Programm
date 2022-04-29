@@ -62,7 +62,7 @@ form{
     grid-template-rows: 10% 10% 10% 10%;                    /*Wie viele Reihen  /  Wie hoch*/
     grid-template-areas:                                    /*Einefachere Variante*/
         "text1 datei datei datei"
-        "text4 btr btr send"
+        "text4 btr drop send"
         "text3 msg msg msg"
 }
 .text-1{
@@ -92,8 +92,11 @@ form{
 .box-5{
     grid-area: btr;
 }
+.box-6{
+    grid-area: drop;
+}
 
-form input, form textarea, form button{
+form input, form textarea, form button, form select{
     padding: 5px;
     margin-top: 16px;
     outline:none;
@@ -106,8 +109,11 @@ form input{
     width: 280px;
     height: 27px;
 }
+form select{
+    height: 40px;
+}
 form textarea{
-    width: 450px;
+    width: 475px;
     height: 450px;
 }
 
