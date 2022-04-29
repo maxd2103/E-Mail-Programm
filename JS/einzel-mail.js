@@ -19,6 +19,7 @@ function sendMsg(email){
   }).then(
     message => alert(message)
     );
+    clear();
 }
 
 
@@ -26,6 +27,13 @@ function sendMultiMail(e) {
   e.preventDefault();
   let email = document.querySelector('.email').value.split(",");
   email.forEach(sendMsg);
+}
+
+function clear() {
+  var grab = document.getElementById("imput");
+    if (grab.value !="") {
+        grab.value = "";
+    }
 }
 
 //add the event listener submit
