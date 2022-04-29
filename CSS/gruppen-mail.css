@@ -1,0 +1,130 @@
+body {
+	margin: 0;
+}
+
+header{
+	background: white;
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	left: 0;
+    width: 1920px;
+    height: 240px;
+	
+}
+.nav{
+    background: #C3260C 0% 0% no-repeat padding-box;
+    width: 1920px;
+    height: 154px;
+    margin-top: 68px;
+}
+
+.nav p{
+    /* Layout Properties */
+    margin-left: 75px;
+    width: 301px;
+    height: 60px;
+    /* UI Properties */
+    text-align: left;
+    font: normal normal normal 45px/60px Segoe UI;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+
+section{
+    margin-top: 242px;
+    margin-left: 91px;
+}
+
+section p{
+    width: 106px;
+    height: 27px;
+    text-align: left;
+    font: normal normal normal 20px/27px Segoe UI;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+
+form{
+    display:flex;
+    width:90%;
+}
+
+.grid-box{
+    width: 1500px;                                           /*Fenster Breite*/
+    height: 600px;                                          /*Fenster Höhe */
+    display: grid;                                          /*Ist jetzt eine Matrix*/ 
+    grid-template-columns: 150px 25% 25% 25%;                 /*Wie viele Spalten  / Wie breit*/
+    grid-template-rows: 10% 10% 10% 10% 10%;                    /*Wie viele Reihen  /  Wie hoch*/
+    grid-template-areas:                                    /*Einefachere Variante*/
+        "text1 name name name"
+        "text2 email email send"
+        "text4 btr btr send"
+        "text3 msg msg msg"
+}
+.text-1{
+    grid-area: text1;
+}
+.text-2{
+    grid-area: text2;
+}
+.text-3{
+    grid-area: text3;
+}
+.text-4{
+    grid-area: text4;
+}
+.box-1{
+    grid-area: name;
+}
+.box-2{
+    grid-area: email;
+}
+.box-3{
+    grid-area: msg;
+}
+.box-4{
+    grid-area: send;
+}
+.box-5{
+    grid-area: btr;
+}
+
+form input, form textarea, form button{
+    padding: 5px;
+    margin-top: 16px;
+    outline:none;
+    background-color: #fff;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #C3260C;
+}
+form input{
+    width: 280px;
+    height: 27px;
+}
+form textarea{
+    width: 450px;
+    height: 450px;
+}
+
+form button{
+    width: 139px;
+    height: 84px;
+    padding-top: 5px;
+    padding-left: 40px;
+    background-color: #C3260C;
+    cursor:pointer;
+    text-align: left;
+    font: normal normal normal 18px/24px Segoe UI;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+}
+
+h1{
+    text-align: center;
+}
