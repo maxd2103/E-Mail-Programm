@@ -24,7 +24,7 @@ function sendMultiMail(e) {
   e.preventDefault();
   let email = document.querySelector('.email').value.split(",");
   email.forEach(sendMsg);
-  alert(message);
+  alert("Die E-Mail(s) wurden versendet!");
 }
 
 //add the event listener submit

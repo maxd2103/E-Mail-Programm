@@ -1,0 +1,55 @@
+<!DOCTYPE html> <!--//https://www.youtube.com/watch?v=kWEDY0rjS30-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>E-Mail Test</title>
+        <script defer src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+    </head>
+    <body>
+
+        <header>
+            <div class="nav">
+                <p>E-Mail Erfassen</p>
+            </div>
+        </header>
+
+        <section>
+            <p>Grusskartenanwendung</p>
+            <form class="contact_form" action="#">
+                <div class="grid-box">
+                    <div class="text-1">
+                        <p>Vor-/Nachname:</p>
+                    </div>
+                    <div class="box-1">
+                        <input class="name" type="text" placeholder="Name"/>
+                    </div>
+                    <div class="text-2">
+                        <p>E-Mail:</p>
+                    </div>
+                    <div class="box-2">
+                        <input class="email" placeholder="E-Mail" />
+                    </div> 
+                    <div class="text-4">
+                        <p>Betreff:</p>
+                    </div>
+                    <div class="box-5">
+                        <input class="btr" type="text" placeholder="Betreff" />
+                    </div>
+                    <div class="text-3">
+                        <p>Text:</p>
+                    </div>
+                    <div class="box-3">
+                        <textarea class="msg" cols="5" rows="5" placeholder="Text"></textarea>
+                    </div>
+                    <div class="box-4">
+                        <button type="submit">Senden</button> 
+                    </div>
+                </div>
+            </form>
+        </section>
+    </body>
+</html>
