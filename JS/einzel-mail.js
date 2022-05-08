@@ -16,7 +16,10 @@ function sendMsg(email){
     From : "grusskartenanwendung@gmail.com",
     Subject : btr.value,
     Body : msg.value
-  })
+  }).then(
+    message => alert(message)
+    );
+    clear();
 }
 
 
@@ -24,7 +27,17 @@ function sendMultiMail(e) {
   e.preventDefault();
   let email = document.querySelector('.email').value.split(",");
   email.forEach(sendMsg);
+
   alert("Die E-Mail(s) wurden versendet!");
+
+}
+
+function clear() {
+  var grab = document.getElementById("imput");
+    if (grab.value !="") {
+        grab.value = "";
+    }
+
 }
 
 //add the event listener submit
