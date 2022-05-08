@@ -17,7 +17,7 @@ function sendMsg(email){
     Subject : btr.value,
     Body : msg.value
   }).then(
-    message => alert(message)
+    message => alert("Die E-Mail wurde versendet")
     );
 }
 
