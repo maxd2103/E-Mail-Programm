@@ -29,15 +29,7 @@ function sendMultiMail(e) {
   email.forEach(sendMsg);
 
   alert("Die E-Mail(s) wurden versendet!");
-
-}
-
-function clear() {
-  var grab = document.getElementById("imput");
-    if (grab.value !="") {
-        grab.value = "";
-    }
-
+  window.location.reload();
 }
 
 //add the event listener submit
