@@ -29,6 +29,7 @@ function sendMultiMail(e) {
   email.forEach(sendMsg);
 
   alert("Die E-Mail(s) wurden versendet!");
+  window.location.reload();
 }
 
 //add the event listener submit
