@@ -25,9 +25,9 @@
                         <p>Excel Datei:</p>
                     </div>
                     <div class="box-1">
-                        <textarea class="form-control" rows=35 cols=120 id="xlx_json"></textarea>
-                        <form enctype="multipart/form-data"></form>
-                        <input id="upload" type=file  name="files[]" />
+                        <input type="file" id="fileUpload" accept=".xls,.xlsx" />
+                        <button type="button" id="uploadExcel">Convert</button>
+                        <!-- */ <pre id="jsonData"></pre> */ -->
                     </div> 
                     <div class="text-4">
                         <p>Betreff:</p>
