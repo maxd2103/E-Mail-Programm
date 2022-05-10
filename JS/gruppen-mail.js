@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
 document.getElementById('uploadExcel')
 .addEventListener('click',function() {
    
-    var sFilename = selectedFile.name;
+/*     var sFilename = selectedFile.name;
     // Create A File Reader HTML5
     var reader = new FileReader();
 
@@ -42,10 +42,10 @@ document.getElementById('uploadExcel')
     };
 
     // Tell JS To Start Reading The File.. You could delay this if desired
-    reader.readAsBinaryString(selectedFile);
+    reader.readAsBinaryString(selectedFile); */
 
 
-    /* const XLSX = require('xlsx') ;
+   /*  const XLSX = require('xlsx') ;
 
     const parseExcel = (selectedFile) => {
     
@@ -61,7 +61,7 @@ document.getElementById('uploadExcel')
         console.log(element.data);
     }) */
 
-       /*  console.log("hi");
+         console.log("hi");
         var fileReader = new FileReader();
         fileReader.onload = function(event){
             var data = event.target.result;
@@ -77,6 +77,6 @@ document.getElementById('uploadExcel')
                 console.log(jsonObject);
             });
         };
-        fileReader.readAsBinaryString(selectedFile); */
+        fileReader.readAsBinaryString(selectedFile); 
     
     });
