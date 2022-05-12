@@ -50,7 +50,7 @@ function sendMsg(email){
                 </img>
               </body>
             `
-      
+                  
     } else if (option[UserOption-1] == "bday"){
       var msg = `
               <body>
@@ -69,20 +69,22 @@ function sendMsg(email){
                   </img>
               </body>
             ` 
-      
+                  
     }else if (option[UserOption-1] == "none"){
       var msg = document.querySelector('.msg');
     }
+    
 
   Email.send({
     SecureToken : "d79a094d-0b62-483d-842c-fcdbc94e4e12",
     To : email,
     From : "grusskartenanwendung@gmail.com",
     Subject : btr.value,
-    Body : msg.value,
+    Body : msg,
   }).then(
     message => alert(message)
     );
+
 }
 
 
