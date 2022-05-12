@@ -1,6 +1,7 @@
 const  form = document.querySelector('.contact_form');
 //function to send the message when click on button send
 
+
 function sendMsg(email){
 
   const name = document.querySelector('.animateTransform'),
