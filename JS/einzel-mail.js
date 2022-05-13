@@ -2,6 +2,7 @@ const  form = document.querySelector('.contact_form');
 //function to send the message when click on button send
 
 
+
 function sendMsg(email){
 
   const name = document.querySelector('.animateTransform'),
@@ -16,7 +17,7 @@ function sendMsg(email){
     if (option[UserOption-1] == "ostern"){
       var msg = `
               <body>
-                  <img src="../src/ostern.png" style="position: relative;width:950px">
+                <img src="ostern.png" style="position: relative;width:950px"> 
                       <p style="
                           position: absolute;
                           top: 200;
@@ -25,17 +26,17 @@ function sendMsg(email){
                           color: #455621;
                           font-family: Roboto;
                           line-height: 1.5;
-                          text-align: justify;">
+                          text-align: justify;">                  
                           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                       </p>
                   </img>
               </body>
             `
-      
+      //Das Bild einfügen funktioniert noch nicht, ich denke irgendwas mit der Verlinkung klappt nicht?
     } else if (option[UserOption-1] == "weihn"){
       var msg = `
               <body>
-                <img src="../src/weihnachten_2.png" style="position: relative;width:950px">
+                <img src="weihnachten_2.png" style="position: relative;width:950px">
                     <p style="
                         position: absolute;
                         top: 200;
@@ -50,11 +51,11 @@ function sendMsg(email){
                 </img>
               </body>
             `
-      
+                  
     } else if (option[UserOption-1] == "bday"){
       var msg = `
               <body>
-                  <img src="src/Bday_1.png" style="position: relative;width:950px">
+                  <img src="Bday_1.png" style="position: relative;width:950px">
                       <p style="
                           position: absolute;
                           top: 200;
@@ -69,20 +70,20 @@ function sendMsg(email){
                   </img>
               </body>
             ` 
-      
+                  
     }else if (option[UserOption-1] == "none"){
       var msg = document.querySelector('.msg');
     }
+    
 
   Email.send({
     SecureToken : "d79a094d-0b62-483d-842c-fcdbc94e4e12",
     To : email,
     From : "grusskartenanwendung@gmail.com",
     Subject : btr.value,
-    Body : msg.value,
-  }).then(
-    message => alert(message)
-    );
+    Body : msg,
+  })
+
 }
 
 
