@@ -36,16 +36,27 @@ document.getElementById('uploadExcel')
                 console.log(jsonObject);
                 //console.log(rowObject);
                     
-                console.log(rowObject[0]["E-mail"])
+                console.log(rowObject[0]["E-Mail"])
 
                 //so müsste das dann ungefähr aussehen
                 for(i= 0; i < rowObject.length; i++){
 
-                        email= rowObject[i]["E-mail"]
-                        console.log(rowObject[i]["E-mail"])
+                        emailJson= rowObject[i]["E-Mail"]
+                        nameJson= rowObject[i]["Name"]
+                        console.log(rowObject[i]["E-Mail"])
+                        console.log(rowObject[i]["Name"])
+
                 }
             });
         };
         fileReader.readAsBinaryString(selectedFile); 
     
     });
+    
+    
+    
+    
+    
+
+    
+    
