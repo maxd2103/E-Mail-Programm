@@ -14,6 +14,8 @@ function sendMsg(email){
     var UserOption = document.getElementById('UserSelect').value;
     option[UserOption-1]
 
+    let nameString = name.toString();
+
     if (option[UserOption-1] == "ostern"){
       var msg = `
               <body style="background-image: url('https://i.ibb.co/MM9SkHR/ostern.png');">
@@ -26,7 +28,7 @@ function sendMsg(email){
                     color: #455621;
                     font-family: Roboto;
                     line-height: 1.5;
-                    text-align: justify;"> Hallo </p> `+name + ` 
+                    text-align: justify;"> Hallo </p> `+nameString + ` 
 
                 <p style="
                           position: absolute;
