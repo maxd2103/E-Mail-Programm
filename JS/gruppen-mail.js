@@ -58,10 +58,105 @@ document.getElementById('uploadExcel')
 
 const  form = document.querySelector('.contact_form');
 function sendMsg(){ 
+
+    var option = ["none", "ostern", "weihn", "bday"];
+    var UserOption = document.getElementById('UserSelect').value;
+    option[UserOption-1]
     const btr = document.querySelector ('.btr');
         var msg = document.querySelector('.msg');
          
     for (i= 0; rowObject.length; i++){
+
+        if (option[UserOption-1] == "ostern"){
+            var msg = `
+                    <body style="background-image: url('https://i.ibb.co/MM9SkHR/ostern.png');">
+                     
+                      <p style="
+                          position: absolute;
+                          top: 200;
+                          left: 250;
+                          width: 600px;
+                          color: #455621;
+                          font-family: Roboto;
+                          line-height: 1.5;
+                          text-align: justify;"> Hallo </p> `+rowObject[i]["Name"]+`
+      
+                      <p style="
+                                position: absolute;
+                                top: 200;
+                                left: 250;
+                                width: 600px;
+                                color: #455621;
+                                font-family: Roboto;
+                                line-height: 1.5;
+                                text-align: justify;">                  
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                            </p>
+                        </img>
+                    </body>
+                  `
+            //Das Bild einfügen funktioniert noch nicht, ich denke irgendwas mit der Verlinkung klappt nicht? --> Bilder hochgeladen auf: https://de.imgbb.com/
+          } else if (option[UserOption-1] == "weihn"){
+            var msg = `
+                    <body style="background-image: url('https://i.ibb.co/0Vhpy8K/weihnachten-2.png');">
+      
+                    <p style="
+                    position: absolute;
+                    top: 200;
+                    left: 250;
+                    width: 600px;
+                    color: #455621;
+                    font-family: Roboto;
+                    line-height: 1.5;
+                    text-align: justify;"> Hallo </p>  `+rowObject[i]["Name"]+`
+      
+                             <p style="
+                              position: absolute;
+                              top: 200;
+                              left: 250;
+                              width: 600px;
+                              color: #455621;
+                              font-family: Roboto;
+                              line-height: 1.5;
+                              text-align: justify;">
+                              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                          </p>
+                      </img>
+                    </body>
+                  `
+                        
+          } else if (option[UserOption-1] == "bday"){
+            var msg = `
+                    <body style="background-image: url('https://i.ibb.co/WW8nLJ8/Bday-1.png');">
+      
+                        <p style="
+                          position: absolute;
+                          top: 200;
+                          left: 250;
+                          width: 600px;
+                          color: #455621;
+                          font-family: Roboto;
+                          line-height: 1.5;
+                          text-align: justify;"> Hallo </p> `+rowObject[i]["Name"]+` 
+      
+                            <p style="
+                                position: absolute;
+                                top: 200;
+                                left: 250;
+                                width: 600px;
+                                color: #455621;
+                                font-family: Roboto;
+                                line-height: 1.5;
+                                text-align: justify;">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                            </p>
+                        </img>
+                    </body>
+                  ` 
+                        
+          }else if (option[UserOption-1] == "none"){
+            var msg = document.querySelector('.msg');
+          }
         
             
 
@@ -72,6 +167,7 @@ function sendMsg(){
             Subject : btr.value,
             Body : msg,
         })
+        alert("Die E-Mail wurden versendet an "+rowObject[i]["Name"]+"!");
     }
 }
 

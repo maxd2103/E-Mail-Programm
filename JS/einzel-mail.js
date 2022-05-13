@@ -14,7 +14,7 @@ function sendMsg(email){
     var UserOption = document.getElementById('UserSelect').value;
     option[UserOption-1]
 
-    let nameString = name.toString();
+    var nameString = name.toString();
 
     if (option[UserOption-1] == "ostern"){
       var msg = `
@@ -28,7 +28,7 @@ function sendMsg(email){
                     color: #455621;
                     font-family: Roboto;
                     line-height: 1.5;
-                    text-align: justify;"> Hallo </p> `+nameString + ` 
+                    text-align: justify;"> Hallo </p> `+ nameString + ` 
 
                 <p style="
                           position: absolute;
