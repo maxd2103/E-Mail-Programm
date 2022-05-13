@@ -17,7 +17,7 @@ function sendMsg(email){
     if (option[UserOption-1] == "ostern"){
       var msg = `
               <body>
-                <img src="ostern.png" style="position: relative;width:950px"> 
+                <img src="https://i.ibb.co/MM9SkHR/ostern.png" style="position: relative;width:950px"> 
                       <p style="
                           position: absolute;
                           top: 200;
@@ -32,11 +32,11 @@ function sendMsg(email){
                   </img>
               </body>
             `
-      //Das Bild einfügen funktioniert noch nicht, ich denke irgendwas mit der Verlinkung klappt nicht?
+      //Das Bild einfügen funktioniert noch nicht, ich denke irgendwas mit der Verlinkung klappt nicht? --> Bilder hochgeöaden auf: https://de.imgbb.com/
     } else if (option[UserOption-1] == "weihn"){
       var msg = `
               <body>
-                <img src="weihnachten_2.png" style="position: relative;width:950px">
+                <img src="https://i.ibb.co/0Vhpy8K/weihnachten-2.png" style="position: relative;width:950px">
                     <p style="
                         position: absolute;
                         top: 200;
@@ -55,7 +55,7 @@ function sendMsg(email){
     } else if (option[UserOption-1] == "bday"){
       var msg = `
               <body>
-                  <img src="Bday_1.png" style="position: relative;width:950px">
+                  <img src="https://i.ibb.co/WW8nLJ8/Bday-1.png" style="position: relative;width:950px">
                       <p style="
                           position: absolute;
                           top: 200;
