@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function() {
 document.getElementById('uploadExcel')
 .addEventListener('click',function() {
 
-         console.log("hi");
         var fileReader = new FileReader();
         fileReader.onload = function(event){
             var data = event.target.result;
@@ -35,7 +34,9 @@ document.getElementById('uploadExcel')
                 let jsonObject = JSON.stringify(rowObject);
                 //document.getElementById("jsonData").innerHTML = jsonObject;
                 console.log(jsonObject);
-                console.log(rowObject);
+                //console.log(rowObject);
+                    
+                console.log(rowObject[0]["e-mail"])
             });
         };
         fileReader.readAsBinaryString(selectedFile); 
