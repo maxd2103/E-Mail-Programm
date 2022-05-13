@@ -36,13 +36,13 @@ document.getElementById('uploadExcel')
                 console.log(jsonObject);
                 //console.log(rowObject);
                     
-                console.log(rowObject[0]["e-mail"])
+                console.log(rowObject[0]["E-mail"])
 
                 //so müsste das dann ungefähr aussehen
                 for(i= 0; i < rowObject.length; i++){
 
-                        email= rowObject[i]["e-mail"]
-                        console.log(rowObject[i]["e-mail"])
+                        email= rowObject[i]["E-mail"]
+                        console.log(rowObject[i]["E-mail"])
                 }
             });
         };
