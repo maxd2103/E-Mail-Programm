@@ -5,6 +5,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js%22%3E"
 src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js%22%3E"
 
 var selectedFile;
+var rowObject;
 
     // UI-Events erst registrieren wenn das DOM bereit ist!
 document.addEventListener("DOMContentLoaded", function() {
@@ -28,7 +29,7 @@ document.getElementById('uploadExcel')
                 type: "binary"
             });
             workbook.SheetNames.forEach(sheet => {
-                let rowObject = XLSX.utils.sheet_to_row_object_array(
+                rowObject = XLSX.utils.sheet_to_row_object_array(
                     workbook.Sheets[sheet]
                 );
                 let jsonObject = JSON.stringify(rowObject);
@@ -52,11 +53,26 @@ document.getElementById('uploadExcel')
         fileReader.readAsBinaryString(selectedFile); 
     
     });
-    
-    
-    
-    
-    
 
-    
-    
+        
+
+const  form = document.querySelector('.contact_form');
+function sendMsg(){ 
+    const btr = document.querySelector ('.btr');
+        var msg = document.querySelector('.msg');
+         
+    for (i= 0; rowObject.length; i++){
+        
+            
+
+        Email.send({
+            SecureToken : "d79a094d-0b62-483d-842c-fcdbc94e4e12",
+            To : rowObject[i]["E-Mail"],
+            From : "grusskartenanwendung@gmail.com",
+            Subject : btr.value,
+            Body : msg,
+        })
+    }
+}
+
+form.addEventListener('submit', sendMsg);
