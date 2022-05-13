@@ -37,6 +37,12 @@ document.getElementById('uploadExcel')
                 //console.log(rowObject);
                     
                 console.log(rowObject[0]["e-mail"])
+
+                //so müsste das dann ungefähr aussehen
+                for(i= 0; i < rowObject.length(); i++){
+
+                        email= rowObject[i]["e-mail"]
+                }
             });
         };
         fileReader.readAsBinaryString(selectedFile); 
