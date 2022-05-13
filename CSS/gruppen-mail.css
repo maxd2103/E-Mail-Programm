@@ -61,7 +61,7 @@ form{
     grid-template-columns: 150px 25% 25% 25%;                 /*Wie viele Spalten  / Wie breit*/
     grid-template-rows: 10% 10% 10% 10%;                    /*Wie viele Reihen  /  Wie hoch*/
     grid-template-areas:                                    /*Einefachere Variante*/
-        "text1 datei datei datei"
+        "text1 datei datei con"
         "text4 btr drop send"
         "text3 msg msg msg"
 }
@@ -94,6 +94,9 @@ form{
 }
 .box-6{
     grid-area: drop;
+}
+.box-7{
+    grid-area: con;
 }
 
 form input, form textarea, form button, form select{
