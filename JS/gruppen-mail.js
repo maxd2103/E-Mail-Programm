@@ -39,9 +39,10 @@ document.getElementById('uploadExcel')
                 console.log(rowObject[0]["e-mail"])
 
                 //so müsste das dann ungefähr aussehen
-                for(i= 0; i < rowObject.length(); i++){
+                for(i= 0; i < rowObject.length; i++){
 
                         email= rowObject[i]["e-mail"]
+                        console.log(rowObject[i]["e-mail"])
                 }
             });
         };
