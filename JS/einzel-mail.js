@@ -5,7 +5,7 @@ const  form = document.querySelector('.contact_form');
 
 function sendMsg(email){
 
-  const name = document.querySelector('.animateTransform'),
+  const name = document.querySelector('.name'),
     btr = document.querySelector ('.btr');
   //const gewaehlteVorlage = getVorlage()
 
@@ -14,11 +14,23 @@ function sendMsg(email){
     var UserOption = document.getElementById('UserSelect').value;
     option[UserOption-1]
 
+    let nameString = name.toString();
+
     if (option[UserOption-1] == "ostern"){
       var msg = `
-              <body>
-                <img src="ostern.png" style="position: relative;width:950px"> 
-                      <p style="
+              <body style="background-image: url('https://i.ibb.co/MM9SkHR/ostern.png');">
+               
+                <p style="
+                    position: absolute;
+                    top: 200;
+                    left: 250;
+                    width: 600px;
+                    color: #455621;
+                    font-family: Roboto;
+                    line-height: 1.5;
+                    text-align: justify;"> Hallo </p> `+nameString + ` 
+
+                <p style="
                           position: absolute;
                           top: 200;
                           left: 250;
@@ -32,12 +44,22 @@ function sendMsg(email){
                   </img>
               </body>
             `
-      //Das Bild einfügen funktioniert noch nicht, ich denke irgendwas mit der Verlinkung klappt nicht?
+      //Das Bild einfügen funktioniert noch nicht, ich denke irgendwas mit der Verlinkung klappt nicht? --> Bilder hochgeladen auf: https://de.imgbb.com/
     } else if (option[UserOption-1] == "weihn"){
       var msg = `
-              <body>
-                <img src="weihnachten_2.png" style="position: relative;width:950px">
-                    <p style="
+              <body style="background-image: url('https://i.ibb.co/0Vhpy8K/weihnachten-2.png');">
+
+              <p style="
+              position: absolute;
+              top: 200;
+              left: 250;
+              width: 600px;
+              color: #455621;
+              font-family: Roboto;
+              line-height: 1.5;
+              text-align: justify;"> Hallo </p> `+name + ` 
+
+                       <p style="
                         position: absolute;
                         top: 200;
                         left: 250;
@@ -54,8 +76,18 @@ function sendMsg(email){
                   
     } else if (option[UserOption-1] == "bday"){
       var msg = `
-              <body>
-                  <img src="Bday_1.png" style="position: relative;width:950px">
+              <body style="background-image: url('https://i.ibb.co/WW8nLJ8/Bday-1.png');">
+
+                  <p style="
+                    position: absolute;
+                    top: 200;
+                    left: 250;
+                    width: 600px;
+                    color: #455621;
+                    font-family: Roboto;
+                    line-height: 1.5;
+                    text-align: justify;"> Hallo </p> `+name + ` 
+
                       <p style="
                           position: absolute;
                           top: 200;
