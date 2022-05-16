@@ -13,23 +13,19 @@ function vorschau (){
 
     if (option[UserOption-1] == "ostern"){
       var msg = `
-              <div style="background-image: url('https://i.ibb.co/MM9SkHR/ostern.png');" width="100%" height="100%">
-               <img src ="https://i.ibb.co/MM9SkHR/ostern.png" width="100%" height="100%"/>
+              <div style="background-image: url('https://i.ibb.co/MM9SkHR/ostern.png')" width="100%" height="100%">
                 <p style="
-                    position: absolute;
-                    top: 200;
-                    left: 250;
                     width: 400px;
+                    heigt: auto;
                     color: #455621;
                     font-family: Roboto;
                     line-height: 1.5;
                     text-align: justify;"> Hallo </p> `+ nameString + ` 
 
                 <p style="
-                          position: absolute;
-                          top: 200;
-                          left: 250;
+                         
                           width: 400px;
+                          height: auto;
                           color: #455621;
                           font-family: Roboto;
                           line-height: 1.5;
@@ -42,52 +38,42 @@ function vorschau (){
     } else if (option[UserOption-1] == "weihn"){
       var msg = `
               <div style="background-image: url('https://i.ibb.co/0Vhpy8K/weihnachten-2.png');">
-              <img src ="https://i.ibb.co/0Vhpy8K/weihnachten-2.png" width="100%" height="100%"/>
 
               <p style="
-              position: absolute;
-              top: 200;
-              left: 250;
-              width: 600px;
+              width: 400px;
+              height: auto;
               color: #455621;
               font-family: Roboto;
               line-height: 1.5;
               text-align: justify;"> Hallo </p> `+ nameString + `  
 
                        <p style="
-                        position: absolute;
-                        top: 200;
-                        left: 250;
-                        width: 600px;
+                        width: 400px;
+                        height: auto;
                         color: #455621;
                         font-family: Roboto;
                         line-height: 1.5;
                         text-align: justify;">
                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                     </p>
-                </img>
               </div>
             `
                   
     } else if (option[UserOption-1] == "bday"){
       var msg = `
-              <div style="background-image: url('https://i.ibb.co/WW8nLJ8/Bday-1.png');">
+              <div style="background-image: url('https://i.ibb.co/WW8nLJ8/Bday-1.png')">
 
                   <p style="
-                    position: absolute;
-                    top: 200;
-                    left: 250;
-                    width: 600px;
+                    width: 400px;
+                    height: auto;
                     color: #455621;
                     font-family: Roboto;
                     line-height: 1.5;
                     text-align: justify;"> Hallo </p> `+ nameString + `  
 
                       <p style="
-                          position: absolute;
-                          top: 200;
-                          left: 250;
-                          width: 600px;
+                          width: 400px;
+                          height: auto;
                           color: #455621;
                           font-family: Roboto;
                           line-height: 1.5;
@@ -105,12 +91,10 @@ function vorschau (){
     vorschau.innerHTML=msg
 }
 
-function updateInerface(){
+function updateInterface(){
         vorschau();
 
-        setTimeout(updateInerface, 500); 
+        setTimeout(updateInterface, 500); 
 }
 
-updateInerface();
-
-
+updateInterface();
