@@ -51,7 +51,8 @@ document.getElementById('uploadExcel')
             });
         };
         fileReader.readAsBinaryString(selectedFile); 
-        bdayChack()
+        
+        setTimeout(bdayChack, 500);
 });
 
         
@@ -235,8 +236,9 @@ function bdayChack(){
   let currentDate = new Date();
   let cDay = currentDate.getDate()
   let cMonth = currentDate.getMonth() + 1
+  const btr = "Beste Geburtstags wünsche der DHBW";
 
-  for (i= 0; rowObject.length; i++){
+  for ( let i= 0;rowObject.length; i++){
       if (rowObject[i]["Tag"] == cDay ){
           if (rowObject[i]["Monat"] == cMonth ){
               if(rowObject[i]["Erlaubnis"] == "Nein"){
