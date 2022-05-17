@@ -5,7 +5,7 @@ const  form = document.querySelector('.contact_form');
 
 function sendMsg(email){
 
-  const name = document.querySelector('.name'),
+  const name = document.getElementById('name').value,
     btr = document.querySelector ('.btr');
   //const gewaehlteVorlage = getVorlage()
 
@@ -15,8 +15,7 @@ function sendMsg(email){
     
     option[UserOption-1]
 
-    var nameString = name.value;
-    console.log(nameString)
+    console.log(name)
 
     if (option[UserOption-1] == "ostern"){
       var msg = `
@@ -30,7 +29,7 @@ function sendMsg(email){
                     color: #455621;
                     font-family: Roboto;
                     line-height: 1.5;
-                    text-align: justify;"> Hallo </p> `+ nameString + ` 
+                    text-align: justify;"> Hallo </p> `+ name + ` 
 
                 <p style="
                           position: absolute;
@@ -59,7 +58,7 @@ function sendMsg(email){
               color: #455621;
               font-family: Roboto;
               line-height: 1.5;
-              text-align: justify;"> Hallo </p> `+ nameString + `  
+              text-align: justify;"> Hallo </p> `+ name + `  
 
                        <p style="
                         position: absolute;
@@ -88,7 +87,7 @@ function sendMsg(email){
                     color: #455621;
                     font-family: Roboto;
                     line-height: 1.5;
-                    text-align: justify;"> Hallo </p> `+ nameString + `  
+                    text-align: justify;"> Hallo </p> `+ name + `  
 
                       <p style="
                           position: absolute;
@@ -132,9 +131,10 @@ function sendMultiMail(e) {
 //add the event listener submit
 form.addEventListener('submit', sendMultiMail);
 
+
 function vorschau (){
 
-  const name = document.querySelector('.name');
+  var name = document.getElementById('name').value;
 
   var vorschau = document.querySelector('#vorschau');
 
@@ -143,7 +143,6 @@ function vorschau (){
   var UserOption = document.getElementById('UserSelect').value;
   option[UserOption-1]
 
-  var nameString = name.textContent;
 
   if (option[UserOption-1] == "ostern"){
     var msg = `
@@ -154,7 +153,7 @@ function vorschau (){
                   color: #455621;
                   font-family: Roboto;
                   line-height: 1.5;
-                  text-align: justify;"> Hallo </p> `+ nameString + ` 
+                  text-align: justify;"> Hallo </p> `+ name + ` 
 
               <p style="
                        
@@ -179,7 +178,7 @@ function vorschau (){
             color: #455621;
             font-family: Roboto;
             line-height: 1.5;
-            text-align: justify;"> Hallo </p> `+ nameString + `  
+            text-align: justify;"> Hallo </p> `+ name + `  
 
                      <p style="
                       width: 400px;
@@ -203,7 +202,7 @@ function vorschau (){
                   color: #455621;
                   font-family: Roboto;
                   line-height: 1.5;
-                  text-align: justify;"> Hallo </p> `+ nameString + `  
+                  text-align: justify;"> Hallo </p> `+ name + `  
 
                     <p style="
                         width: 400px;
