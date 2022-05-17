@@ -12,9 +12,11 @@ function sendMsg(email){
     var option = ["none", "ostern", "weihn", "bday"];
     
     var UserOption = document.getElementById('UserSelect').value;
+    
     option[UserOption-1]
 
-    var nameString = name.textContent;
+    var nameString = name.value;
+    console.log(nameString)
 
     if (option[UserOption-1] == "ostern"){
       var msg = `
