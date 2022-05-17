@@ -58,12 +58,12 @@ form{
     width: 1500px;                                           /*Fenster Breite*/
     height: 600px;                                          /*Fenster Höhe */
     display: grid;                                          /*Ist jetzt eine Matrix*/ 
-    grid-template-columns: 150px 25% 25% 25%;                 /*Wie viele Spalten  / Wie breit*/
+    grid-template-columns: 150px 25% 25% 25% 150px;                 /*Wie viele Spalten  / Wie breit*/
     grid-template-rows: 10% 10% 10% 10%;                    /*Wie viele Reihen  /  Wie hoch*/
     grid-template-areas:                                    /*Einefachere Variante*/
-        "text1 datei datei con"
-        "text4 btr drop send"
-        "text3 msg msg msg"
+        "text1 datei datei con vs"
+        "text4 btr drop send vs"
+        "text3 msg msg msg vs"
 }
 .text-1{
     grid-area: text1;
@@ -97,6 +97,15 @@ form{
 }
 .box-7{
     grid-area: con;
+}
+.box-8{
+    grid-area: vs;
+    background-color: #fff;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #C3260C;
+    width: 500px;
+    height: 650px;
 }
 
 form input, form textarea, form button, form select{
