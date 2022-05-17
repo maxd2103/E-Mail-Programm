@@ -218,7 +218,7 @@ function vorschau (){
           ` 
                 
   }else if (option[UserOption-1] == "none"){
-    var msg = document.querySelector('.msg');
+    var msg = document.querySelector('.msg').value;
   }
 
   vorschau.innerHTML=msg

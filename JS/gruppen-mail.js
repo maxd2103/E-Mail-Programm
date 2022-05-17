@@ -52,7 +52,8 @@ document.getElementById('uploadExcel')
         };
         fileReader.readAsBinaryString(selectedFile); 
         
-        setTimeout(bdayChack, 500);
+        //setTimeout(bdayChack,osternCheck, 500);
+        setTimeout(osternCheck, 500);
 });
 
         
@@ -218,7 +219,7 @@ function vorschau (){
             ` 
                   
     }else if (option[UserOption-1] == "none"){
-      var msg = document.querySelector('.msg');
+      var msg = document.querySelector('.msg').value;
     }
 
     vorschau.innerHTML=msg
@@ -234,9 +235,9 @@ updateInterface();
 
 function bdayChack(){  
   let currentDate = new Date();
-  let cDay = currentDate.getDate()
-  let cMonth = currentDate.getMonth() + 1
-  const btr = "Beste Geburtstags wünsche der DHBW";
+  let cDay = currentDate.getDate();
+  let cMonth = currentDate.getMonth() + 1;
+  var btr = "Beste Geburtstags wünsche der DHBW";
 
   for ( let i= 0;rowObject.length; i++){
       if (rowObject[i]["Tag"] == cDay ){
@@ -267,7 +268,7 @@ function bdayChack(){
                       SecureToken : "d79a094d-0b62-483d-842c-fcdbc94e4e12",
                       To : rowObject[i]["E-Mail"],
                       From : "grusskartenanwendung@gmail.com",
-                      Subject : btr.value,
+                      Subject : btr,
                       Body : msg,
                   })
                   alert(rowObject[i]["Name"]+" hat heute Geburtstag und hat eine E-Mail erhalten!");                      
@@ -280,3 +281,79 @@ function bdayChack(){
       }
   }
 }
+
+function osternCheck(){  
+  let currentDate = new Date();
+  var btr = "Beste Oster wünsche der DHBW";
+  let osterDate = OsterSonntag();
+
+
+  for ( let i= 0;rowObject.length; i++){
+      if (osterDate.getDate() == currentDate.getDate()){
+          if (osterDate.getMonth() == currentDate.getMonth() + 1 ){
+            if (osterDate.getFullYear() == currentDate.getFullYear() ){
+              if(rowObject[i]["Erlaubnis"] == "Nein"){
+                  alert(rowObject[i]["Name"]+"hat heute Geburtstag hat aber keine Erlaubnis zum Mail Versenden gegeben!")
+                }else{
+                  var msg = `
+                        <body style="background-image: url('https://i.ibb.co/MM9SkHR/ostern.png');">
+                        
+                          `+ rowObject[i]["Begrüßung"]+rowObject[i]["Name"] +`
+          
+                          <p style="
+                                    position: absolute;
+                                    top: 200;
+                                    left: 250;
+                                    width: 600px;
+                                    color: #455621;
+                                    font-family: Roboto;
+                                    line-height: 1.5;
+                                    text-align: justify;">                  
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                                </p>
+                            </img>
+                        </body>
+                      `
+                  Email.send({
+                      SecureToken : "d79a094d-0b62-483d-842c-fcdbc94e4e12",
+                      To : rowObject[i]["E-Mail"],
+                      From : "grusskartenanwendung@gmail.com",
+                      Subject : btr,
+                      Body : msg,
+                  })
+                  alert(rowObject[i]["Name"]+" hat heute Geburtstag und hat eine E-Mail erhalten!");                      
+              
+              } 
+             }else{
+                console.log("Keiner hat Geburtstag")
+              }
+          }else{
+              console.log("Keiner hat Geburtstag")
+          }
+      }else{
+          console.log("Keiner hat Geburtstag")
+      }
+  }
+}
+
+function OsterSonntag()
+    { 
+
+      let currentDate = new Date();
+      let Jahr = currentDate.getFullYear();
+
+        if ((Jahr < 1970) || (2099 < Jahr)) {  return "Datum muss zwischen 1970 und 2099 liegen"; }
+
+       
+        var a = Jahr % 19;
+        var d = (19 * a + 24) % 30;
+        var Tag = d + (2 * (Jahr % 4) + 4 * (Jahr % 7) + 6 * d + 5) % 7;
+        if ((Tag == 35) || ((Tag == 34) && (d == 28) && (a > 10))) { Tag -= 7; }
+
+        var OsterDatum = new Date(Jahr, 2, 22)
+        OsterDatum.setTime(OsterDatum.getTime() + 86400000 * 0 + 86400000 * Tag)
+
+        console.log(OsterDatum);
+        return OsterDatum;
+
+    } // -->
