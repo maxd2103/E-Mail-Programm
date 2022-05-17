@@ -235,46 +235,41 @@ function bdayChack(){
   let currentDate = new Date();
   let cDay = currentDate.getDate()
   let cMonth = currentDate.getMonth() + 1
-  let cYear = currentDate.getFullYear()
 
   for (i= 0; rowObject.length; i++){
       if (rowObject[i]["Tag"] == cDay ){
           if (rowObject[i]["Monat"] == cMonth ){
-              if (rowObject[i]["Jahr"] == cYear ){
-                  if(rowObject[i]["Erlaubnis"] == "Nein"){
-                      alert(rowObject[i]["Name"]+"hat heute Geburtstag hat aber keine Erlaubnis zum Mail Versenden gegeben!")
-                    }else{
-                      var msg = `
-                              <body style="background-image: url('https://i.ibb.co/WW8nLJ8/Bday-1.png');">
-              
-                                  `+ rowObject[i]["Begrüßung"]+rowObject[i]["Name"] +` 
-              
-                                      <p style="
-                                          position: absolute;
-                                          top: 200;
-                                          left: 250;
-                                          width: 600px;
-                                          color: #455621;
-                                          font-family: Roboto;
-                                          line-height: 1.5;
-                                          text-align: justify;">
-                                          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                                      </p>
-                                  </img>
-                              </body>
-                          ` 
-                      Email.send({
-                          SecureToken : "d79a094d-0b62-483d-842c-fcdbc94e4e12",
-                          To : rowObject[i]["E-Mail"],
-                          From : "grusskartenanwendung@gmail.com",
-                          Subject : btr.value,
-                          Body : msg,
-                      })
-                      alert(rowObject[i]["Name"]+" hat heute Geburtstag und hat eine E-Mail erhalten!");                      
-                    }
-              }else{
-                  console.log("Keiner hat Geburtstag")
-              }
+              if(rowObject[i]["Erlaubnis"] == "Nein"){
+                  alert(rowObject[i]["Name"]+"hat heute Geburtstag hat aber keine Erlaubnis zum Mail Versenden gegeben!")
+                }else{
+                  var msg = `
+                          <body style="background-image: url('https://i.ibb.co/WW8nLJ8/Bday-1.png');">
+          
+                              `+ rowObject[i]["Begrüßung"]+rowObject[i]["Name"] +` 
+          
+                                  <p style="
+                                      position: absolute;
+                                      top: 200;
+                                      left: 250;
+                                      width: 600px;
+                                      color: #455621;
+                                      font-family: Roboto;
+                                      line-height: 1.5;
+                                      text-align: justify;">
+                                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                                  </p>
+                              </img>
+                          </body>
+                      ` 
+                  Email.send({
+                      SecureToken : "d79a094d-0b62-483d-842c-fcdbc94e4e12",
+                      To : rowObject[i]["E-Mail"],
+                      From : "grusskartenanwendung@gmail.com",
+                      Subject : btr.value,
+                      Body : msg,
+                  })
+                  alert(rowObject[i]["Name"]+" hat heute Geburtstag und hat eine E-Mail erhalten!");                      
+                }
           }else{
               console.log("Keiner hat Geburtstag")
           }
