@@ -66,7 +66,9 @@ function sendMsg(){
         var msg = document.querySelector('.msg');
          
     for (i= 0; rowObject.length; i++){
-
+      if(rowObject[i]["Erlaubnis"] == "Nein"){
+        alert(rowObject[i]["Name"]+" hat keine Erlaubnis zum Mail Versenden gegeben!")
+      }else{
         if (option[UserOption-1] == "ostern"){
             var msg = `
                     <body style="background-image: url('https://i.ibb.co/MM9SkHR/ostern.png');">
@@ -168,14 +170,13 @@ function sendMsg(){
             Body : msg,
         })
         alert("Die E-Mail wurden versendet an "+rowObject[i]["Name"]+"!");
+      }
     }
 }
 
 form.addEventListener('submit', sendMsg);
 
 function vorschau (){
-
-    const name = document.querySelector('.name');
 
     var vorschau = document.querySelector('#vorschau');
 
