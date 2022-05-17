@@ -51,8 +51,9 @@ document.getElementById('uploadExcel')
             });
         };
         fileReader.readAsBinaryString(selectedFile); 
-    
-    });
+        
+        setTimeout(bdayChack, 500);
+});
 
         
 
@@ -66,20 +67,14 @@ function sendMsg(){
         var msg = document.querySelector('.msg');
          
     for (i= 0; rowObject.length; i++){
-
+      if(rowObject[i]["Erlaubnis"] == "Nein"){
+        alert(rowObject[i]["Name"]+" hat keine Erlaubnis zum Mail Versenden gegeben!")
+      }else{
         if (option[UserOption-1] == "ostern"){
             var msg = `
                     <body style="background-image: url('https://i.ibb.co/MM9SkHR/ostern.png');">
                      
-                      <p style="
-                          position: absolute;
-                          top: 200;
-                          left: 250;
-                          width: 600px;
-                          color: #455621;
-                          font-family: Roboto;
-                          line-height: 1.5;
-                          text-align: justify;"> Hallo </p> `+rowObject[i]["Name"]+`
+                      `+ rowObject[i]["Begrüßung"]+rowObject[i]["Name"] +`
       
                       <p style="
                                 position: absolute;
@@ -100,15 +95,7 @@ function sendMsg(){
             var msg = `
                     <body style="background-image: url('https://i.ibb.co/0Vhpy8K/weihnachten-2.png');">
       
-                    <p style="
-                    position: absolute;
-                    top: 200;
-                    left: 250;
-                    width: 600px;
-                    color: #455621;
-                    font-family: Roboto;
-                    line-height: 1.5;
-                    text-align: justify;"> Hallo </p>  `+rowObject[i]["Name"]+`
+                    `+ rowObject[i]["Begrüßung"]+rowObject[i]["Name"] +`
       
                              <p style="
                               position: absolute;
@@ -129,15 +116,7 @@ function sendMsg(){
             var msg = `
                     <body style="background-image: url('https://i.ibb.co/WW8nLJ8/Bday-1.png');">
       
-                        <p style="
-                          position: absolute;
-                          top: 200;
-                          left: 250;
-                          width: 600px;
-                          color: #455621;
-                          font-family: Roboto;
-                          line-height: 1.5;
-                          text-align: justify;"> Hallo </p> `+rowObject[i]["Name"]+` 
+                        `+ rowObject[i]["Begrüßung"]+rowObject[i]["Name"] +` 
       
                             <p style="
                                 position: absolute;
@@ -168,14 +147,13 @@ function sendMsg(){
             Body : msg,
         })
         alert("Die E-Mail wurden versendet an "+rowObject[i]["Name"]+"!");
+      }
     }
 }
 
 form.addEventListener('submit', sendMsg);
 
 function vorschau (){
-
-    const name = document.querySelector('.name');
 
     var vorschau = document.querySelector('#vorschau');
 
@@ -187,13 +165,7 @@ function vorschau (){
     if (option[UserOption-1] == "ostern"){
       var msg = `
               <div style="background-image: url('https://i.ibb.co/MM9SkHR/ostern.png')" width="100%" height="100%">
-                <p style="
-                    width: 400px;
-                    heigt: auto;
-                    color: #455621;
-                    font-family: Roboto;
-                    line-height: 1.5;
-                    text-align: justify;"> Hallo </p> `+ rowObject[1]["Name"] + ` 
+                `+ rowObject[1]["Begrüßung"]+rowObject[1]["Name"] + ` 
 
                 <p style="
                          
@@ -212,13 +184,7 @@ function vorschau (){
       var msg = `
               <div style="background-image: url('https://i.ibb.co/0Vhpy8K/weihnachten-2.png');">
 
-              <p style="
-              width: 400px;
-              height: auto;
-              color: #455621;
-              font-family: Roboto;
-              line-height: 1.5;
-              text-align: justify;"> Hallo </p> `+ rowObject[1]["Name"] + `  
+              `+ rowObject[1]["Begrüßung"]+rowObject[1]["Name"] + `  
 
                        <p style="
                         width: 400px;
@@ -236,13 +202,7 @@ function vorschau (){
       var msg = `
               <div style="background-image: url('https://i.ibb.co/WW8nLJ8/Bday-1.png')">
 
-                  <p style="
-                    width: 400px;
-                    height: auto;
-                    color: #455621;
-                    font-family: Roboto;
-                    line-height: 1.5;
-                    text-align: justify;"> Hallo </p> `+ rowObject[1]["Name"] + `  
+                  `+ rowObject[1]["Begrüßung"]+rowObject[1]["Name"] + `  
 
                       <p style="
                           width: 400px;
@@ -271,3 +231,52 @@ function updateInterface(){
 }
 
 updateInterface();
+
+function bdayChack(){  
+  let currentDate = new Date();
+  let cDay = currentDate.getDate()
+  let cMonth = currentDate.getMonth() + 1
+  const btr = "Beste Geburtstags wünsche der DHBW";
+
+  for ( let i= 0;rowObject.length; i++){
+      if (rowObject[i]["Tag"] == cDay ){
+          if (rowObject[i]["Monat"] == cMonth ){
+              if(rowObject[i]["Erlaubnis"] == "Nein"){
+                  alert(rowObject[i]["Name"]+"hat heute Geburtstag hat aber keine Erlaubnis zum Mail Versenden gegeben!")
+                }else{
+                  var msg = `
+                          <body style="background-image: url('https://i.ibb.co/WW8nLJ8/Bday-1.png');">
+          
+                              `+ rowObject[i]["Begrüßung"]+rowObject[i]["Name"] +` 
+          
+                                  <p style="
+                                      position: absolute;
+                                      top: 200;
+                                      left: 250;
+                                      width: 600px;
+                                      color: #455621;
+                                      font-family: Roboto;
+                                      line-height: 1.5;
+                                      text-align: justify;">
+                                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                                  </p>
+                              </img>
+                          </body>
+                      ` 
+                  Email.send({
+                      SecureToken : "d79a094d-0b62-483d-842c-fcdbc94e4e12",
+                      To : rowObject[i]["E-Mail"],
+                      From : "grusskartenanwendung@gmail.com",
+                      Subject : btr.value,
+                      Body : msg,
+                  })
+                  alert(rowObject[i]["Name"]+" hat heute Geburtstag und hat eine E-Mail erhalten!");                      
+                }
+          }else{
+              console.log("Keiner hat Geburtstag")
+          }
+      }else{
+          console.log("Keiner hat Geburtstag")
+      }
+  }
+}
