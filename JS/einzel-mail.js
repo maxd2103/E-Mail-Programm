@@ -105,7 +105,7 @@ function sendMsg(email){
             ` 
                   
     }else if (option[UserOption-1] == "none"){
-      var msg = document.querySelector('.msg');
+      var msg = name + document.querySelector('.msg');
     }
     
 
@@ -135,6 +135,7 @@ form.addEventListener('submit', sendMultiMail);
 function vorschau (){
 
   var name = document.getElementById('name').value;
+  var anR = document.getElementById('anR').value;
 
   var vorschau = document.querySelector('#vorschau');
 
@@ -146,14 +147,8 @@ function vorschau (){
 
   if (option[UserOption-1] == "ostern"){
     var msg = `
-            <div style="background-image: url('https://i.ibb.co/MM9SkHR/ostern.png')" width="100%" height="100%">
-              <p style="
-                  width: 400px;
-                  heigt: auto;
-                  color: #455621;
-                  font-family: Roboto;
-                  line-height: 1.5;
-                  text-align: justify;"> Hallo </p> `+ name + ` 
+              <div style="background-image: url('https://i.ibb.co/MM9SkHR/ostern.png')" width="100%" height="100%">
+                `+ anR + name + ` 
 
               <p style="
                        
@@ -170,15 +165,8 @@ function vorschau (){
     //Das Bild einfügen funktioniert noch nicht, ich denke irgendwas mit der Verlinkung klappt nicht? --> Bilder hochgeladen auf: https://de.imgbb.com/
   } else if (option[UserOption-1] == "weihn"){
     var msg = `
-            <div style="background-image: url('https://i.ibb.co/0Vhpy8K/weihnachten-2.png');">
-
-            <p style="
-            width: 400px;
-            height: auto;
-            color: #455621;
-            font-family: Roboto;
-            line-height: 1.5;
-            text-align: justify;"> Hallo </p> `+ name + `  
+              <div style="background-image: url('https://i.ibb.co/0Vhpy8K/weihnachten-2.png');">
+              `+ anR + name + `  
 
                      <p style="
                       width: 400px;
@@ -195,14 +183,7 @@ function vorschau (){
   } else if (option[UserOption-1] == "bday"){
     var msg = `
             <div style="background-image: url('https://i.ibb.co/WW8nLJ8/Bday-1.png')">
-
-                <p style="
-                  width: 400px;
-                  height: auto;
-                  color: #455621;
-                  font-family: Roboto;
-                  line-height: 1.5;
-                  text-align: justify;"> Hallo </p> `+ name + `  
+             `+ anR + name + `  
 
                     <p style="
                         width: 400px;
@@ -218,7 +199,7 @@ function vorschau (){
           ` 
                 
   }else if (option[UserOption-1] == "none"){
-    var msg = document.querySelector('.msg').value;
+    var msg = anR + name + document.querySelector('.msg').value;
   }
 
   vorschau.innerHTML=msg
