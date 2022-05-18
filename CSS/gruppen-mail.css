@@ -145,3 +145,11 @@ form button{
 h1{
     text-align: center;
 }
+.swal-overlay {
+    background-color: rgba(220,220,220, 0.7);
+  }
+
+.swal-button{
+        background-color:#C3260C;
+
+  }

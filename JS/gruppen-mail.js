@@ -1,4 +1,5 @@
 
+
 type="text/javascript"
 src="https://cdnjs.cloudfare.com/ajax/libs/xlsx/0.15.3/xlsx.full.min.js"
 src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js%22%3E"
@@ -70,7 +71,10 @@ function sendMsg(){
          
     for (i= 0; rowObject.length; i++){
       if(rowObject[i]["Erlaubnis"] == "Nein"){
-        alert(rowObject[i]["Name"]+" hat keine Erlaubnis zum Mail Versenden gegeben!")
+        swal({
+          text: rowObject[i]["Name"]+" hat keine Erlaubnis zum Mail Versenden gegeben!",
+          icon: "success",
+        });
       }else{
         if (option[UserOption-1] == "ostern"){
             var msg = `
@@ -148,7 +152,10 @@ function sendMsg(){
             Subject : btr.value,
             Body : msg,
         })
-        alert("Die E-Mail wurden versendet an "+rowObject[i]["Name"]+"!");
+        swal({
+          text: "Die E-Mail(s) wurden versendet!",
+          icon: "success",
+        });
       }
     }
 }
@@ -242,7 +249,10 @@ function bdayChack(){
       if (rowObject[i]["Tag"] == currentDate.getDate() ){
           if (rowObject[i]["Monat"] == currentDate.getMonth() + 1 ){
               if(rowObject[i]["Erlaubnis"] == "Nein"){
-                  alert(rowObject[i]["Name"]+" hat heute Geburtstag hat aber keine Erlaubnis zum Mail Versenden gegeben!")
+                  swal({
+                    text: rowObject[i]["Name"]+" hat heute Geburtstag hat aber keine Erlaubnis zum Mail Versenden gegeben!",
+                    icon: "success",
+                  });
                 }else{
                   var msg = `
                           <body style="background-image: url('https://i.ibb.co/WW8nLJ8/Bday-1.png');">
@@ -270,7 +280,10 @@ function bdayChack(){
                       Subject : btr,
                       Body : msg,
                   })
-                  alert(rowObject[i]["Name"]+" hat heute Geburtstag und hat eine E-Mail erhalten!");                      
+                  swal({
+                    text: rowObject[i]["Name"]+" hat heute Geburtstag und hat eine E-Mail erhalten!",
+                    icon: "success",
+                  });                      
                 }
           }else{
               console.log("Keiner hat Geburtstag")
@@ -292,7 +305,10 @@ function osternCheck(){
           if (osterDate.getMonth() == currentDate.getMonth() + 1 ){
             if (osterDate.getFullYear() == currentDate.getFullYear() ){
               if(rowObject[i]["Erlaubnis"] == "Nein"){
-                  alert(rowObject[i]["Name"]+" hat keine Erlaubnis zum Mail Versenden gegeben!")
+                  swal({
+                    text: rowObject[i]["Name"]+" hat keine Erlaubnis zum Mail Versenden gegeben!",
+                    icon: "success",
+                  });   
                 }else{
                   var msg = `
                         <body style="background-image: url('https://i.ibb.co/MM9SkHR/ostern.png');">
@@ -320,7 +336,10 @@ function osternCheck(){
                       Subject : btr,
                       Body : msg,
                   })
-                  alert(rowObject[i]["Name"]+" hat heute Geburtstag und hat eine E-Mail erhalten!");                      
+                  swal({
+                    text: rowObject[i]["Name"]+" hat heute Geburtstag und hat eine E-Mail erhalten!",
+                    icon: "success",
+                  });                     
               
               } 
              }else{
@@ -366,7 +385,11 @@ function weihnCheck(){
       if ("24" == currentDate.getDate()){
           if ("12" == currentDate.getMonth() + 1 ){
               if(rowObject[i]["Erlaubnis"] == "Nein"){
-                  alert(rowObject[i]["Name"]+" hat keine Erlaubnis zum Mail Versenden gegeben!")
+                    swal({
+                      text: rowObject[i]["Name"]+" hat keine Erlaubnis zum Mail Versenden gegeben!",
+                      icon: "success",
+                    });     
+                    
                 }else{
                   var msg = `
                         <body style="background-image: url('https://i.ibb.co/0Vhpy8K/weihnachten-2.png');">
@@ -394,7 +417,10 @@ function weihnCheck(){
                       Subject : btr,
                       Body : msg,
                   })
-                  alert(rowObject[i]["Name"]+" hat heute Geburtstag und hat eine E-Mail erhalten!");                      
+                  swal({
+                    text: rowObject[i]["Name"]+" hat heute Geburtstag und hat eine E-Mail erhalten!",
+                    icon: "success",
+                  });                          
               
               }
           }else{

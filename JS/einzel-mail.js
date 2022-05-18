@@ -1,3 +1,5 @@
+
+
 const  form = document.querySelector('.contact_form');
 //function to send the message when click on button send
 
@@ -125,7 +127,10 @@ function sendMultiMail(e) {
   let email = document.querySelector('.email').value.split(",");
   email.forEach(sendMsg);
 
-  alert("Die E-Mail(s) wurden versendet!");
+  swal({
+    text: "Die E-Mail(s) wurden versendet!",
+    icon: "success",
+  });
 }
 
 //add the event listener submit
