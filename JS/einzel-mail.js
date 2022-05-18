@@ -7,6 +7,7 @@ function sendMsg(email){
 
   const name = document.getElementById('name').value,
     btr = document.querySelector ('.btr');
+  var anR = document.getElementById('anR').value;
   //const gewaehlteVorlage = getVorlage()
 
     var option = ["none", "ostern", "weihn", "bday"];
@@ -20,16 +21,7 @@ function sendMsg(email){
     if (option[UserOption-1] == "ostern"){
       var msg = `
               <body style="background-image: url('https://i.ibb.co/MM9SkHR/ostern.png');">
-               
-                <p style="
-                    position: absolute;
-                    top: 200;
-                    left: 250;
-                    width: 600px;
-                    color: #455621;
-                    font-family: Roboto;
-                    line-height: 1.5;
-                    text-align: justify;"> Hallo </p> `+ name + ` 
+               `+ anR + name + ` 
 
                 <p style="
                           position: absolute;
@@ -49,16 +41,7 @@ function sendMsg(email){
     } else if (option[UserOption-1] == "weihn"){
       var msg = `
               <body style="background-image: url('https://i.ibb.co/0Vhpy8K/weihnachten-2.png');">
-
-              <p style="
-              position: absolute;
-              top: 200;
-              left: 250;
-              width: 600px;
-              color: #455621;
-              font-family: Roboto;
-              line-height: 1.5;
-              text-align: justify;"> Hallo </p> `+ name + `  
+                `+ anR + name + `  
 
                        <p style="
                         position: absolute;
@@ -78,16 +61,7 @@ function sendMsg(email){
     } else if (option[UserOption-1] == "bday"){
       var msg = `
               <body style="background-image: url('https://i.ibb.co/WW8nLJ8/Bday-1.png');">
-
-                  <p style="
-                    position: absolute;
-                    top: 200;
-                    left: 250;
-                    width: 600px;
-                    color: #455621;
-                    font-family: Roboto;
-                    line-height: 1.5;
-                    text-align: justify;"> Hallo </p> `+ name + `  
+              `+ anR + name + `  
 
                       <p style="
                           position: absolute;
@@ -105,7 +79,7 @@ function sendMsg(email){
             ` 
                   
     }else if (option[UserOption-1] == "none"){
-      var msg = name + document.querySelector('.msg');
+      var msg = anR + name + `<br>` + document.querySelector('.msg').value;
     }
     
 
@@ -126,6 +100,11 @@ function sendMultiMail(e) {
   email.forEach(sendMsg);
 
   alert("Die E-Mail(s) wurden versendet!");
+  setTimeout (reload, 500);
+}
+
+function reload(){
+  window.location.reload();
 }
 
 //add the event listener submit
@@ -199,7 +178,7 @@ function vorschau (){
           ` 
                 
   }else if (option[UserOption-1] == "none"){
-    var msg = anR + name + document.querySelector('.msg').value;
+    var msg = anR + name + `<br>` + document.querySelector('.msg').value;
   }
 
   vorschau.innerHTML=msg
