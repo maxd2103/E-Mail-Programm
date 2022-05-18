@@ -101,8 +101,11 @@ function sendMultiMail(e) {
   let email = document.querySelector('.email').value.split(",");
   email.forEach(sendMsg);
 
-  alert("Die E-Mail(s) wurden versendet!");
-  setTimeout (reload, 500);
+  swal({
+    text: "Die E-Mail(s) wurden versendet!",
+    icon: "success",
+  });     
+ // setTimeout (reload, 500);
 }
 
 function reload(){
