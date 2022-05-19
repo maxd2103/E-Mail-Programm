@@ -300,10 +300,11 @@ function osternCheck(){
   let osterDate = OsterSonntag();
 
 
-  for ( let i= 0;rowObject.length; i++){
+  
       if (osterDate.getDate() == currentDate.getDate()){
           if (osterDate.getMonth() == currentDate.getMonth() + 1 ){
             if (osterDate.getFullYear() == currentDate.getFullYear() ){
+              for ( let i= 0;rowObject.length; i++){
               if(rowObject[i]["Erlaubnis"] == "Nein"){
                   swal({
                     text: rowObject[i]["Name"]+" hat keine Erlaubnis zum Mail Versenden gegeben!",
@@ -341,6 +342,7 @@ function osternCheck(){
                     icon: "success",
                   });                     
               
+              }
               } 
              }else{
                 console.log("Keiner hat Geburtstag")
@@ -351,7 +353,7 @@ function osternCheck(){
       }else{
           console.log("Keiner hat Geburtstag")
       }
-  }
+  
 }
 
 function OsterSonntag()
@@ -381,9 +383,10 @@ function weihnCheck(){
   var btr = "Beste Weihnachtswünsche wünsche der DHBW";
 
 
-  for ( let i= 0;rowObject.length; i++){
+  
       if ("24" == currentDate.getDate()){
           if ("12" == currentDate.getMonth() + 1 ){
+            for ( let i= 0;rowObject.length; i++){
               if(rowObject[i]["Erlaubnis"] == "Nein"){
                     swal({
                       text: rowObject[i]["Name"]+" hat keine Erlaubnis zum Mail Versenden gegeben!",
@@ -423,11 +426,12 @@ function weihnCheck(){
                   });                          
               
               }
+            }
           }else{
               console.log("Keiner hat Geburtstag")
           }
       }else{
           console.log("Keiner hat Geburtstag")
       }
-  }
+  
 }
