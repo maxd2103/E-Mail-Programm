@@ -76,7 +76,6 @@ function sendMsg(email){
                           text-align: justify;">
                           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                       </p>
-                  </img>
               </body>
             ` 
                   
@@ -131,17 +130,20 @@ function vorschau (){
 
   if (option[UserOption-1] == "ostern"){
     var msg = `
-              <div style="background-image: url('https://i.ibb.co/MM9SkHR/ostern.png')" width="100%" height="100%">
+              <div style="background-image: url('https://i.ibb.co/MM9SkHR/ostern.png');background-size:auto;width:100%;height:auto">
                 `+ anR + name + ` 
 
               <p style="
                        
-                        width: 400px;
+                        width: auto;
                         height: auto;
-                        color: #455621;
-                        font-family: Roboto;
+                        padding: 15px;
+                        color: #292C25;
+                        font-family: Roboto, sans-serif;
+                        font-size: 17px;
                         line-height: 1.5;
-                        text-align: justify;">                  
+                        text-align: justify;
+                        background: rgb(134 178 63 / 70%);">                  
                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                     </p>
             </div>
@@ -149,16 +151,19 @@ function vorschau (){
     //Das Bild einfügen funktioniert noch nicht, ich denke irgendwas mit der Verlinkung klappt nicht? --> Bilder hochgeladen auf: https://de.imgbb.com/
   } else if (option[UserOption-1] == "weihn"){
     var msg = `
-              <div style="background-image: url('https://i.ibb.co/0Vhpy8K/weihnachten-2.png');">
+              <div style="background-image: url('https://i.ibb.co/0Vhpy8K/weihnachten-2.png');background-size:cover;width:100%;height:auto">
               `+ anR + name + `  
 
                      <p style="
-                      width: 400px;
-                      height: auto;
-                      color: #455621;
-                      font-family: Roboto;
-                      line-height: 1.5;
-                      text-align: justify;">
+                     width: auto;
+                     height: auto;
+                     padding: 15px;
+                     color: #D7C656;
+                     font-family: Roboto, sans-serif;
+                     font-size: 17px;
+                     line-height: 1.5;
+                     text-align: justify;
+                     background: rgb(92 5 5 / 70%);">
                       Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                   </p>
             </div>
@@ -166,19 +171,21 @@ function vorschau (){
                 
   } else if (option[UserOption-1] == "bday"){
     var msg = `
-            <div style="background-image: url('https://i.ibb.co/WW8nLJ8/Bday-1.png')">
+            <div style="background-image: url('https://i.ibb.co/WW8nLJ8/Bday-1.png');background-size:cover;width:100%;height:auto">
              `+ anR + name + `  
 
                     <p style="
-                        width: 400px;
-                        height: auto;
-                        color: #455621;
-                        font-family: Roboto;
-                        line-height: 1.5;
-                        text-align: justify;">
+                    width: auto;
+                    height: auto;
+                    padding: 15px;
+                    color: #000;
+                    font-family: Roboto, sans-serif;
+                    font-size: 17px;
+                    line-height: 1.5;
+                    text-align: justify;
+                    background: rgb(98 173 183 / 70%);">
                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                     </p>
-                </img>
             </div>
           ` 
                 
